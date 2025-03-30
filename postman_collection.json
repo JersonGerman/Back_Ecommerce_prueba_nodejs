@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "2053a9e1-2aeb-4294-b4d0-30b41c772cb8",
+		"name": "Ecommerce Prueba Que Tal Compra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12083335"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documento\": \"789876545\",\r\n    \"nombre\": \"Juan\",\r\n    \"apellidoPaterno\": \"Patrio\",\r\n    \"apellidoMaterno\": \"Alvarez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/v1/clientes",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/v1/clientes",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Crear Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"clienteId\": 2,\r\n    \"productos\": [\r\n        {\r\n            \"id\" : 1,\r\n            \"cantidad\": 3\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"cantidad\": 1\r\n        }\r\n    ]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/v1/pedidos",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/v1/pedidos",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Productos x Pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/v1/pedidos/2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Pedido",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"clienteId\": 2,\r\n    \"productos\": [\r\n        {\r\n            \"id\" : 1,\r\n            \"cantidad\": 2\r\n        }\r\n    ]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/v1/pedidos/2",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Procesador Intel Core i3\",\r\n    \"precio\": 2300\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/v1/productos",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}/api/v1/productos",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticación",
+			"item": []
+		}
+	]
+}
